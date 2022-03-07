@@ -23,6 +23,7 @@ slideImage.src = imagesUrls[currentImageIndex];
 function onShowPrevBtnClick() {
   currentImageIndex--;
   slideImage.src = imagesUrls[currentImageIndex];
+  showNextBtn.disabled = false;
 
   // disabled prev button if need
   if (currentImageIndex === 0) {
@@ -33,6 +34,7 @@ function onShowPrevBtnClick() {
 function onShowNextBtnClick() {
   currentImageIndex++;
   slideImage.src = imagesUrls[currentImageIndex];
+  showPrevBtn.disabled = false;
 
   // disabled next button if need
   if (currentImageIndex === (imagesUrls.length - 1)) {
