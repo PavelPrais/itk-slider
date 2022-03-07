@@ -15,6 +15,7 @@ imagesUrls.push('https://artsdot.com/ADC/Photos-ImgScreen.nsf/O/P-AC92G2/$FILE/V
 imagesUrls.push('http://cdn4.3dtuning.com/info/Porsche%20918%20RSR%202012%20Coupe/factory/1.jpg');
 
 var currentImageIndex = 0;
+showPrevBtn.disabled = true;
 
 slideImage.src = imagesUrls[currentImageIndex];
 
@@ -22,12 +23,18 @@ slideImage.src = imagesUrls[currentImageIndex];
 function onShowPrevBtnClick() {
   currentImageIndex--;
   slideImage.src = imagesUrls[currentImageIndex];
+
+  // disabled prev button if need
+  if (currentImageIndex === 0) {
+    showPrevBtn.disabled = true;
+  }
 };
+
 function onShowNextBtnClick() {
   currentImageIndex++;
   slideImage.src = imagesUrls[currentImageIndex];
 
-  // disabled next
+  // disabled next button if need
   if (currentImageIndex === (imagesUrls.length - 1)) {
     showNextBtn.disabled = true;
   }
